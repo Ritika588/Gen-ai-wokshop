@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts</title>
+    <style>
+        body {
+            background-color: #7cfc00; /* Crocodile green */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            background-color: #32cd32; /* Lime green */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #228b22; /* Forest green */
+            transform: translateY(-2px);
+        }
+
+        .fact-display {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .fact-display.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="factButton">Show Crocodile Fact</button>
+        <div id="factDisplay" class="fact-display"></div>
+    </div>
+    <script>
+        const facts = [
+            "Crocodiles have been around for over 200 million years, making them one of the oldest living species.",
+            "They can hold their breath underwater for up to an hour.",
+            "Crocodiles have a powerful bite, with some species having a bite force of over 3,700 pounds per square inch.",
+            "They can replace each of their 80 teeth up to 50 times in their lifetime.",
+            "Crocodiles are excellent swimmers and can reach speeds of up to 20 miles per hour in the water.",
+            "They have a special valve in their throat that allows them to open their mouths underwater without drowning.",
+            "Crocodiles communicate with each other through vocalizations, including growls, hisses, and roars.",
+            "They have a highly developed sense of smell, which helps them locate prey.",
+            "Crocodiles are cold-blooded and rely on external heat sources to regulate their body temperature.",
+            "Some crocodile species can live up to 70 years in the wild."
+        ];
+
+        document.getElementById('factButton').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const factDisplay = document.getElementById('factDisplay');
+            factDisplay.textContent = facts[randomIndex];
+            factDisplay.classList.add('show');
+        });
+    </script>
+</body>
+</html>
